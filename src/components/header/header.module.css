@@ -2,5 +2,31 @@
     display: flex;
     align-items: center;
     justify-content: end;
-    gap: var(--size-base);
+    gap: 1rem;
+}
+
+/* xs */
+/* @media (min-width: 475px) {} */
+
+/* sm */
+@media (min-width: 640px) {
+    .header {
+        padding: 0rem 1rem;
+    }
+}
+
+/* md */
+/* @media (min-width: 768px) {} */
+
+/* lg */
+/* @media (min-width: 1024px) {} */
+
+/* xl */
+/* @media (min-width: 1280px) {} */
+
+/* 2xl */
+@media (min-width: 1536px) {
+    .header {
+        gap: 2rem;
+    }
 }

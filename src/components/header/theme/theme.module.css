@@ -1,4 +1,31 @@
-.icon {
-    height: var(--size-4xl);
+.label {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
     width: var(--size-4xl);
+    height: var(--size-4xl);
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 400ms, transform 300ms;
+    transform-origin: left center;
+}
+
+
+
+.fade {
+    opacity: 0;
+    transform: scale(0);
 }
