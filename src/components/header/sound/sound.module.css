@@ -1,4 +1,4 @@
 .icon {
     height: var(--size-4xl);
-    width: var(--size-4xl);
+    aspect-ratio: 1/1;
 }
