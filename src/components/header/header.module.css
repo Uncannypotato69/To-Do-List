@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: end;
     gap: 1rem;
+    padding: 0rem 0.5rem;
 }
 
 /* xs */
@@ -11,7 +12,7 @@
 /* sm */
 @media (min-width: 640px) {
     .header {
-        padding: 0rem 1rem;
+        padding: 0rem 0rem;
     }
 }
 
@@ -19,7 +20,11 @@
 /* @media (min-width: 768px) {} */
 
 /* lg */
-/* @media (min-width: 1024px) {} */
+@media (min-width: 1024px) {
+    .header {
+        padding: 0rem 2rem;
+    }
+}
 
 /* xl */
 /* @media (min-width: 1280px) {} */

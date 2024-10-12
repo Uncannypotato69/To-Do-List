@@ -1,0 +1,22 @@
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.75rem;
+    border: var(--clr-black) 2px solid;
+    border-radius: 3rem;
+}
+
+.button__svg {
+    height: var(--size-xl);
+    aspect-ratio: 1/1;
+    stroke: var(--clr-black);
+    stroke-width: 2px;
+}
+
+.button__text {
+    letter-spacing: -0.05rem;
+    font-weight: 500;
+    font-size: var(--size-2xl);
+}

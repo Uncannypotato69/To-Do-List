@@ -39,8 +39,8 @@ html {
 
 body {
     font-family: "Inconsolata", sans-serif;
-    background-color: var(--bkg-light);
-    color: var(--text-light);
+    background-color: var(--clr-white);
+    color: var(--clr-black);
 }
 
 img,

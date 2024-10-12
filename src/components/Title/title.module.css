@@ -1,0 +1,47 @@
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.title__heading {
+    font-size: var(--size-4xl);
+    font-weight: 800;
+}
+
+.title__svg {
+    height: var(--size-4xl);
+    aspect-ratio: 1/1;
+    stroke: var(--clr-black);
+}
+
+/* xs */
+/* @media (min-width: 475px) {} */
+
+/* sm */
+@media (min-width: 640px) {
+    .title {
+        justify-content: start;
+    }
+
+    .title__heading {
+        font-size: var(--size-5xl);
+    }
+
+    .title__svg {
+        height: var(--size-5xl);
+    }
+}
+
+/* md */
+/* @media (min-width: 768px) {} */
+
+/* lg */
+/* @media (min-width: 1024px) {} */
+
+/* xl */
+/* @media (min-width: 1280px) {} */
+
+/* 2xl */
+/* @media (min-width: 1536px) {} */

@@ -10,14 +10,18 @@
     margin-top: 2rem;
 }
 
+.list__container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* xs */
 @media (min-width: 475px) {
     .container {
         max-width: 475px;
     }
 }
-
-
 
 /* sm */
 @media (min-width: 640px) {
@@ -30,6 +34,10 @@
 @media (min-width: 768px) {
     .container {
         max-width: 768px;
+    }
+
+    .list__container {
+        max-width: 800px;
     }
 
 }
