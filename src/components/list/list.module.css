@@ -3,5 +3,6 @@
     align-items: start;
     justify-content: start;
     flex-direction: column;
+    gap: 3rem;
     min-height: 20vh;
 }

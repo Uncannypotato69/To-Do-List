@@ -1,4 +1,44 @@
-.trash__svg {
+.trash__label {
+    position: relative;
     height: var(--size-4xl);
     aspect-ratio: 1/1;
+    display: block;
+    cursor: pointer;
+}
+
+.trash__input {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+}
+
+.trash__svg {
+    position: absolute;
+    height: 100%;
+    aspect-ratio: 1/1;
+}
+
+.trash__bin {
+    transform-origin: bottom left;
+}
+
+
+span:hover svg .trash__lid {
+    transform-origin: center;
+    animation: moveAndRotate 600ms ease-in-out forwards;
+}
+
+@keyframes moveAndRotate {
+    0% {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(0px, -4px) rotate(-7deg);
+    }
+
+    100% {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
 }

@@ -5,6 +5,7 @@
     display: block;
     border: 1.75px solid var(--clr-black);
     border-radius: 0.5rem;
+    cursor: pointer;
 }
 
 .doneCheckbox__input {
