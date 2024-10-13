@@ -1,0 +1,4 @@
+.trash__svg {
+    height: var(--size-4xl);
+    aspect-ratio: 1/1;
+}

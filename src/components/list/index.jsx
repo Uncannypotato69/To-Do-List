@@ -1,7 +1,11 @@
 import classes from "./list.module.css"
 import Button from "../button"
+import Trash from "../trash"
+import Checkbox from "../checkbox"
 import useStickyState from "./useStickyState"
 import { useState } from "react"
+
+
 
 
 export default function List(){
@@ -22,6 +26,8 @@ export default function List(){
                 }
             </ul>
             <Button/>
+            <Checkbox/>
+            <Trash/>
         </div>
     )
 }

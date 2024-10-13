@@ -1,0 +1,32 @@
+.doneCheckbox__label {
+    position: relative;
+    height: var(--size-4xl);
+    aspect-ratio: 1/1;
+    display: block;
+    border: 1.75px solid var(--clr-black);
+    border-radius: 0.5rem;
+}
+
+.doneCheckbox__input {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+}
+
+.doneCheckbox__svg {
+    position: absolute;
+    height: 100%;
+    aspect-ratio: 1/1;
+    scale: 1.2;
+}
+
+.doneCheckbox__path {
+    stroke-dasharray: 245;
+    stroke-dashoffset: 245;
+    transition: all 1200ms linear;
+}
+
+.checked {
+    stroke-dashoffset: 0;
+}
