@@ -65,3 +65,23 @@ button {
     height: 40vh;
     /* border: 2px solid sandybrown; */
 }
+
+li:nth-child(1) .path {
+    stroke: var(--clr-yellow);
+}
+
+li:nth-child(2) .path {
+    stroke: var(--clr-indigo);
+}
+
+li:nth-child(3) .path {
+    stroke: var(--clr-pink);
+}
+
+li:nth-child(4) .path {
+    stroke: var(--clr-lime);
+}
+
+li:nth-child(5) .path {
+    stroke: var(--clr-violet);
+}

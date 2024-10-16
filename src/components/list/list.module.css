@@ -6,3 +6,19 @@
     gap: 3rem;
     min-height: 20vh;
 }
+
+.UL {
+    width: 100%;
+}
+
+.listItem__input {
+    border: none;
+    background: none;
+    outline: none;
+    width: 100%;
+    /* height: 4rem; */
+}
+
+.lineThrough {
+    text-decoration: line-through;
+}
