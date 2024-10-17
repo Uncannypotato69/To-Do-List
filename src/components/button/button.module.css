@@ -19,4 +19,5 @@
     letter-spacing: -0.05rem;
     font-weight: 500;
     font-size: var(--size-2xl);
+    color: var(--clr-black);
 }

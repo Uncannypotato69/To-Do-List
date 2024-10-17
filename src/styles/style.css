@@ -27,6 +27,16 @@
     --size-10xl: 10rem;
 }
 
+.light-theme {
+    --clr-white: #F7F7F7;
+    --clr-black: #0C0C0C;
+}
+
+.dark-theme {
+    --clr-white: #0C0C0C;
+    --clr-black: #F7F7F7;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -41,6 +51,7 @@ body {
     font-family: "Inconsolata", sans-serif;
     background-color: var(--clr-white);
     color: var(--clr-black);
+    transition: all 0.25s ease-in-out;
 }
 
 img,
@@ -62,8 +73,11 @@ button {
 }
 
 .app {
-    height: 40vh;
-    /* border: 2px solid sandybrown; */
+    min-height: 100vh;
+}
+
+.path {
+    stroke-opacity: 0.75;
 }
 
 li:nth-child(1) .path {

@@ -8,14 +8,31 @@
 }
 
 .UL {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
     width: 100%;
+    list-style-type: none;
 }
+
+.list__item {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 1rem;
+}
+
+/* .listItem__span {
+    width: 100%;
+} */
 
 .listItem__input {
     border: none;
     background: none;
     outline: none;
     width: 100%;
+    color: var(--clr-black);
     /* height: 4rem; */
 }
 

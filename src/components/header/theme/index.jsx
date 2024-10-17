@@ -1,8 +1,15 @@
-import { useState } from "react"
+import { useState, useContext, useEffect } from "react"
 import useSound from "use-sound"
 import classes from "./theme.module.css"
 import Boop from "../boop"
 import onSFX from "/audio/on.mp3"
+import { ThemeContext } from "../../../Theme"
+
+
+
+function change(){
+    document.body.classList.remove("white")
+}
 
 export default function Theme(){
 
@@ -13,10 +20,20 @@ export default function Theme(){
     const sunClass = isActive ? `${classes.bottom}` : `${classes.top}`;
     const moonClass = isActive ? `${classes.top}` : `${classes.bottom}`;
 
+    const { theme, toggleTheme } = useContext(ThemeContext);
+
+    useEffect(() => {
+        document.body.classList.add(theme);
+    
+        return () => {
+          document.body.classList.remove(theme);
+        };
+      }, [theme]);
+  
     return(
         <label htmlFor="checkboxTheme" className={`${classes.label}`}>
-            <input type="checkbox" name="" id="checkboxTheme" className={`${classes.checkbox}`} onClick={play} onChange={() => {
-            console.log('Sound checkbox has been clicked', )
+            <input type="checkbox"  id="checkboxTheme" className={`${classes.checkbox}`} onClick={play} onChange={() => {
+                toggleTheme()
             setIsActive(!isActive)
             }}/>
             <Boop x={0} y={0} rotation={0} scale={0.8} timing={300} cls={sunClass}>

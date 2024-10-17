@@ -4,6 +4,7 @@
     aspect-ratio: 1/1;
     display: block;
     cursor: pointer;
+    margin-left: auto;
 }
 
 .trash__input {
@@ -17,6 +18,10 @@
     position: absolute;
     height: 100%;
     aspect-ratio: 1/1;
+}
+
+.trash__svg path {
+    stroke: var(--clr-black);
 }
 
 .trash__bin {

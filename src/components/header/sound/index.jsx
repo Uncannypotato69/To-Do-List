@@ -12,7 +12,6 @@ export default function Sound(){
     return(
         <label htmlFor="checkboxSound" className={`${classes.label} `}>
         <input type="checkbox" name="" id="checkboxSound" className={`${classes.checkbox}`} onChange={() => {
-            console.log('Sound checkbox has been clicked', )
             setIsActive(!isActive)
             }}/>
         <Boop x={-5} y={0} rotation={-5} scale={1} cls={sound}>

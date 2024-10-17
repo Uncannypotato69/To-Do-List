@@ -2,7 +2,7 @@ import classes from "./list.module.css"
 import Button from "../button"
 import Trash from "../trash"
 import Checkbox from "../checkbox"
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import useStickyState from "./useStickyState.jsx"
 import { to } from "@react-spring/web"
 
@@ -13,9 +13,9 @@ export default function List() {
     //Array of Tasks
     const [tasks, setTasks] = useStickyState(
         [
-            { text: "Take out the trash", id: crypto.randomUUID(), comepleted: true },
-            { text: "Do your homework", id: crypto.randomUUID(), comepleted: false },
-            { text: "Practice chess endgames", id: crypto.randomUUID(), comepleted: false }
+            { text: "Take out the trash", id: crypto.randomUUID(), deleted: false, comepleted: true },
+            { text: "Do your homework", id: crypto.randomUUID(), deleted: false, comepleted: false },
+            { text: "Practice chess endgames", id: crypto.randomUUID(), deleted: false, comepleted: false }
         ],
         "tasks"
     );
@@ -33,7 +33,7 @@ export default function List() {
 
     // Function to add a new task and focus on its input
     function handleClick() {
-        const newTask = { text: "", id: crypto.randomUUID(), comepleted: false};
+        const newTask = { text: "", id: crypto.randomUUID(), deleted: false, comepleted: false};
         const newTasks = [...tasks, newTask];
         setTasks(newTasks);
 
@@ -59,17 +59,32 @@ export default function List() {
                 }, 0);
     }
 
+    //function to delete an Item
+    function deleteToggle(index){
+        const newTasks = [...tasks]
+        newTasks[index].deleted = !newTasks[index].deleted
+        const newTasksAD = newTasks.filter((newTask) => newTask.deleted !== true)
+        setTasks(newTasksAD)
+    }
+
+    const textInputs = document.querySelectorAll('input[type="text"]');
+
+    useEffect(() => {
+        textInputs.forEach(textInput => textInput.style.width = textInput.value.length + "ch")
+    })
+
     return (
         <div className={`list__container section ${classes.list}`}>
             <ul className={`${classes.UL}`}>
                 {tasks.map((task, index) => {
                     return (
-                        <li key={task.id}>
-                            <Checkbox ToggleTask={ToggleTask} index={index} completed={task.completed} id={task.id} />
-                        <input
+                        <li key={task.id} className={`${classes.list__item}`}>
+                            <Checkbox ToggleTask={ToggleTask} index={index} completed={task.completed} id={task.id}/>
+                            <span>
+                            <input
                                 type="text"
                                 value={task.text}
-                                onChange={(e) => setNewText(e.target.value)}
+                                onChange={(e) => {setNewText(e.target.value)}}
                                 onBlur={() => handleEdit()} 
                                 onKeyDown={(e) => {
                                                     if (e.key === "Enter") {
@@ -80,7 +95,9 @@ export default function List() {
                                 className={`${classes.listItem__input} ${task.completed ? classes.lineThrough : ""}`}
                                 ref={(el) => (taskRefs.current[index] = el)} // Assign ref to each input
                             />
-                            <Trash/>
+                            </span>
+                        
+                            <Trash deleteToggle={deleteToggle} index={index} id={task.id} deleted={task.deleted}/>
                         </li>
                     );
                 })}
