@@ -8,7 +8,6 @@ import { to } from "@react-spring/web"
 
 
 
-
 export default function List() {
     //Array of Tasks
     const [tasks, setTasks] = useStickyState(
@@ -67,11 +66,14 @@ export default function List() {
         setTasks(newTasksAD)
     }
 
-    const textInputs = document.querySelectorAll('input[type="text"]');
 
     useEffect(() => {
-        textInputs.forEach(textInput => textInput.style.width = textInput.value.length + "ch")
-    })
+        taskRefs.current.forEach(input => {
+          if (input) {
+            input.style.width = input.value.length + "ch";
+          }
+        });
+      }, [tasks]);
 
     return (
         <div className={`list__container section ${classes.list}`}>
@@ -80,11 +82,11 @@ export default function List() {
                     return (
                         <li key={task.id} className={`${classes.list__item}`}>
                             <Checkbox ToggleTask={ToggleTask} index={index} completed={task.completed} id={task.id}/>
-                            <span>
+                            <span className={`${task.completed ? classes.completed : ""}`}>
                             <input
                                 type="text"
                                 value={task.text}
-                                onChange={(e) => {setNewText(e.target.value)}}
+                                onChange={(e) => {setNewText(e.target.value); taskRefs.current[index].style.width = e.target.value.length + "ch"}}
                                 onBlur={() => handleEdit()} 
                                 onKeyDown={(e) => {
                                                     if (e.key === "Enter") {
@@ -92,7 +94,7 @@ export default function List() {
                                                              handleEdit(); 
                                                               }
                                                          }}
-                                className={`${classes.listItem__input} ${task.completed ? classes.lineThrough : ""}`}
+                                className={`${classes.listItem__input}`}
                                 ref={(el) => (taskRefs.current[index] = el)} // Assign ref to each input
                             />
                             </span>

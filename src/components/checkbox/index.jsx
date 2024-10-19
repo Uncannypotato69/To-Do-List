@@ -1,13 +1,17 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import classes from "./checkbox.module.css"
 import useSound from "use-sound"
 import scribbleSFX from "/audio/writingPencil.mp3"
+import { SoundContext } from "../../Sound"
 
 export default function Checkbox({ToggleTask, index, completed, id}){
 
     const [isActive, setIsActive] = useState(completed)
+    const {sound} = useContext(SoundContext)
 
-    const [play] = useSound(scribbleSFX)
+
+    const [play] = useSound(scribbleSFX, {playbackRate: 1.1, soundEnabled: sound})
+
 
     return(
         <label htmlFor={id} className={`${classes.doneCheckbox__label}`}>

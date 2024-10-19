@@ -1,9 +1,11 @@
 import { useState, useContext, useEffect } from "react"
+import useStickyState from "../../list/useStickyState"
 import useSound from "use-sound"
 import classes from "./theme.module.css"
 import Boop from "../boop"
-import onSFX from "/audio/on.mp3"
+import switchSFX from "/audio/switch.mp3"
 import { ThemeContext } from "../../../Theme"
+import { SoundContext } from "../../../Sound"
 
 
 
@@ -13,9 +15,10 @@ function change(){
 
 export default function Theme(){
 
-    const [isActive, setIsActive] = useState(false)
+    const [isActive, setIsActive] = useStickyState(false, "themeCheckbox")
+    const {sound} = useContext(SoundContext)
 
-    const [play] = useSound(onSFX)
+    const [play] = useSound(switchSFX, {playbackRate: 1.3, soundEnabled: sound})
 
     const sunClass = isActive ? `${classes.bottom}` : `${classes.top}`;
     const moonClass = isActive ? `${classes.top}` : `${classes.bottom}`;

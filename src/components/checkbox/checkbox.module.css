@@ -25,7 +25,7 @@
 .doneCheckbox__path {
     stroke-dasharray: 245;
     stroke-dashoffset: 245;
-    transition: all 1200ms linear;
+    transition: all 1000ms linear;
 }
 
 .checked {

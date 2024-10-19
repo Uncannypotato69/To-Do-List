@@ -23,7 +23,7 @@ li span:has(input[type="text"]) {
     position: relative;
 }
 
-/* li span:has(input[type="text"]):after {
+li span:has(input[type="text"]):after {
     content: "";
     display: block;
     position: absolute;
@@ -32,8 +32,32 @@ li span:has(input[type="text"]) {
     transform: translateY(-50%);
     height: 2px;
     width: 100%;
-    background-color: var(--clr-indigo);
-} */
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: all 1000ms ease-out;
+}
+
+li:nth-child(1) span:has(input[type="text"]):after {
+    background-color: var(--clr-yellow)
+}
+
+li:nth-child(2) span:has(input[type="text"]):after {
+    background-color: var(--clr-indigo)
+}
+
+li:nth-child(3) span:has(input[type="text"]):after {
+    background-color: var(--clr-pink)
+}
+
+li:nth-child(4) span:has(input[type="text"]):after {
+    background-color: var(--clr-lime)
+}
+
+li:nth-child(5) span:has(input[type="text"]):after {
+    background-color: var(--clr-violet)
+}
+
+
 
 /* xs */
 @media (min-width: 475px) {
