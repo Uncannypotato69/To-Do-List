@@ -1,0 +1,23 @@
+.social__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.social__icon {
+    color: var(--clr-black);
+    transition: all 200ms;
+}
+
+.social__icon:hover {
+    transform: translatey(4px) scale(0.9);
+}
+
+.social__text {
+    font-size: var(--size-2xl);
+}

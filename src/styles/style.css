@@ -49,6 +49,7 @@ html {
 
 body {
     font-family: "Inconsolata", sans-serif;
+    overflow-x: hidden;
     background-color: var(--clr-white);
     color: var(--clr-black);
     transition: all 0.25s ease-in-out;
@@ -73,29 +74,31 @@ button {
 }
 
 .app {
-    min-height: 100vh;
+    min-height: 90vh;
+    position: relative;
+    padding-bottom: 6rem;
 }
 
 .path {
     stroke-opacity: 0.75;
 }
 
-li:nth-child(1) .path {
+li:nth-child(5n+1) .path {
     stroke: var(--clr-yellow);
 }
 
-li:nth-child(2) .path {
+li:nth-child(5n+2) .path {
     stroke: var(--clr-indigo);
 }
 
-li:nth-child(3) .path {
+li:nth-child(5n+3) .path {
     stroke: var(--clr-pink);
 }
 
-li:nth-child(4) .path {
+li:nth-child(5n+4) .path {
     stroke: var(--clr-lime);
 }
 
-li:nth-child(5) .path {
+li:nth-child(5n+5) .path {
     stroke: var(--clr-violet);
 }

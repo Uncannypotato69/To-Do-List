@@ -4,7 +4,7 @@
     justify-content: start;
     flex-direction: column;
     gap: 3rem;
-    min-height: 20vh;
+    padding-bottom: 6rem;
 }
 
 .UL {
@@ -21,23 +21,31 @@
     align-items: center;
     justify-content: start;
     gap: 1rem;
+    max-width: 100%;
 }
-
-/* .listItem__span {
-    width: 100%;
-} */
 
 .listItem__input {
     border: none;
     background: none;
     outline: none;
-    width: 100%;
     color: var(--clr-black);
-    /* height: 4rem; */
+    flex-grow: 1;
+    /* Allow the input to grow */
+    min-width: 5rem;
+    /* Set a minimum width for the input */
+    max-width: 100%;
+    /* Prevent it from growing too large */
+    overflow: hidden;
+    /* Hide overflowed content */
+    text-overflow: ellipsis;
+    /* Add ellipsis for overflowing text */
+    white-space: nowrap;
+    /* Prevent text from wrapping */
 }
 
-.lineThrough {
-    text-decoration: line-through;
+.list__span {
+    display: flex;
+    max-width: calc(100% - 7rem)
 }
 
 .completed.completed::after {
